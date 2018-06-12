@@ -2,7 +2,7 @@
   "name": "model-app",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://dreamer01.github.io/myapp",
+  "homepage" : "http://dreamer01.github.io/Helpdesk-React-UI",
   "dependencies": {
     "auth0-js": "^9.6.0",
     "node-fetch": "^2.1.2",
@@ -16,6 +16,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
