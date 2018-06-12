@@ -1,0 +1,23 @@
+.output-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-auto-rows: auto;
+    grid-gap: 1em;
+}
+
+.output-container > div{
+    background: lightcyan;
+    padding: 1em;
+}
+
+.output-container > div > img{
+    width: 256px;
+}
+
+.output-container > div > p{
+    font-family: Cambria;
+    font-size: 2em;
+    font-weight: 400;
+    color: midnightblue;
+}
+
