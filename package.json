@@ -2,7 +2,7 @@
   "name": "model-app",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://dreamer01.github.io/Helpdesk-React-UI",
+  "homepage" : "http://dreamer01.github.io",
   "dependencies": {
     "auth0-js": "^9.6.0",
     "node-fetch": "^2.1.2",

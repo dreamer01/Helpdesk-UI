@@ -18,7 +18,7 @@ class Popup extends React.Component {
 class UserInput extends Component {
     constructor(props){
       super(props)
-      this.state ={userdata:null,productClass:null,typeClass:null,sentiment:null,showPopup :false};
+      this.state ={userdata:null,productClass:null,typeClass:null,sentiment:null,showPopup :false,};
       this.helpFn = this.helpFn.bind(this);
       this.handleChange = this.handleChange.bind(this);
     }
@@ -26,7 +26,7 @@ class UserInput extends Component {
     helpFn = () =>{
       this.setState({showPopup: true});
 
-      fetch(`https://fccdc1f6.ngrok.io`,{
+      fetch(`https://7b8051b3.ngrok.io`,{
         method: "POST",
         headers:{
           "Content-Type" : "application/json"
@@ -36,10 +36,10 @@ class UserInput extends Component {
           return(response.json());
       }).then(data => {
           console.log(data);
-          this.setState({"productClass": `${data.Complain_product_class}`, "typeClass": `${data.complain_type_class}` ,"sentiment" : `${data.sentiment}`} );
+          this.setState({"productClass": `${data.Complain_product_class}`, "typeClass": `${data.complain_type_class}` ,"sentiment" : `${data.sentiment}`, "response": `${data.response}`} );
           this.props.history.push({
               pathname: '/output',
-              state: {"productClass": `${data.Complain_product_class}`, "typeClass": `${data.complain_type_class}` ,"sentiment" : `${data.sentiment}`} });
+              state: {"productClass": `${data.Complain_product_class}`, "typeClass": `${data.complain_type_class}` ,"sentiment" : `${data.sentiment}`, "response": `${data.response}`} });
       })
     }
 
@@ -49,13 +49,13 @@ class UserInput extends Component {
     }
 
     render() {
-      return ( 
+      return (
         <div className="input-main">
           <img id='img-notepad' src={require('./images/notepad.jpg')} alt=""/>
           <textarea id="txtInput"  rows="10" onChange={(e) => {this.handleChange(e)}} />
           <input type="button" id="btnHelp" onClick={this.helpFn} value="Help" />
 
-          { this.state.showPopup 
+          { this.state.showPopup
               ? <Popup/>
               : null
           }
